@@ -1,4 +1,4 @@
-import io.github.muqhc.skollobletoxml.*
+import io.github.muqhc.skollobletoxml.skollobleToXml
 import java.io.File
 
 fun main() {
@@ -16,7 +16,7 @@ fun main() {
 
     val generatedHtml = skollobleToXml(testResource)
 
-    File("generated from skolloble.html").run {
+    File("generated-from-skolloble.html").run {
         writeText(
             generatedHtml
         )
