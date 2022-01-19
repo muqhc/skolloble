@@ -61,7 +61,7 @@ publishing {
         create<MavenPublication>(rootProject.name) {
 
             groupId = project.properties["group"]!! as String
-            artifactId = rootProject.name
+            artifactId = project.name
 
             from(components["java"])
             artifact(tasks["sourcesJar"])
