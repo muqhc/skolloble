@@ -22,10 +22,17 @@ name : attribute"value" -  ; single element ;
 name : attribute"value" \  ; no element ;
 ```
 
+#### string-element
+```
+name : attr"value" {
+    "just a string element!"
+}
+```
+
 #### short-attribute
 
 ```
-name : shortattr1 shortattr2 \
+name : shortattr1 shortattr2 ........
 ```
 
 ### ( example )
