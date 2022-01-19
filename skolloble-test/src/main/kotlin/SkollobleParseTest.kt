@@ -14,12 +14,15 @@ fun main() {
                         "Click to go Github !"""".trimIndent()
 
     val skollobleParser = SkollobleParser(testResource)
-    println(skollobleParser.rootElement
-        .children[1]
-        .children[0]
-        .children[0]
-        .attribution
-        .entries
+
+    println(
+        skollobleParser
+            .rootElement
+            .children[1]
+            .children[0]
+            .children[0]
+            .attribution
+            .entries
     )
 
 }

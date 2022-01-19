@@ -22,11 +22,12 @@ dependencies {
 
 ## example
 
-##### hello.kt
+#### hello.kt
+
+##### import
 
 ```kotlin
 import io.github.muqhc.skollobletoxml.skollobleToXml
-import java.io.File
 ```
 
 ##### main()
@@ -45,11 +46,7 @@ val testResource = """
 
 val generatedHtml = skollobleToXml(testResource)
 
-File("generated-from-skolloble.html").run {
-    writeText(generatedHtml)
-    println(readText())
-    createNewFile()
-}
+println(generatedHtml)
 ```
 ##### // output
 ```
