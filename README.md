@@ -1,6 +1,6 @@
 # .skolloble  (.skble)
 
-#### _skolloble, the markup language like xml_
+#### _skolloble, the markup language such as xml_
 
 ## Grammar
 
