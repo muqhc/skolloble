@@ -7,7 +7,7 @@
 ### Comment
 wrap texts with ';'
 ```
-; Hello Skolloble Comment! ;
+; It is a Comment! ;
 ```
 
 ### element
