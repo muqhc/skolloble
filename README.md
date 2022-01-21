@@ -4,6 +4,8 @@
 
 ## Grammar
 
+#### [grammar definition with antlr4](skolloble-grammar/grammar/src/main/antlr/Skolloble.g4)
+
 ### Comment
 wrap texts with ';'
 ```
@@ -30,6 +32,8 @@ name : attr"value" {
 ```
 
 #### short-attribute
+
+attribute without "value"
 
 ```
 name : shortattr1 shortattr2 ........
