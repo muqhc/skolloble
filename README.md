@@ -39,7 +39,9 @@ attribute without "value"
 name : shortattr1 shortattr2 ........
 ```
 
-### ( example )
+### ( Example )
+
+in skolloble......
 
 ```
 html /
@@ -53,7 +55,7 @@ html /
                 "Click to go Github !"
 ```
 
-<=>
+in xml......
 
 ```
 <html>
