@@ -38,14 +38,14 @@ INTOATTR
     :   ':'  ;
 
 // -- Identifier --
-fragment IDHEAD
-    :   [_a-zA-Z]  ;
+fragment IDSUR
+    :   [_a-zA-Z0-9]  ;
 
-fragment IDTAIL
-    :   [0-9a-zA-Z_]|'-'  ;
+fragment IDINNER
+    :   [0-9a-zA-Z_.]|'-'  ;
 
 fragment NAMING
-    :   IDHEAD (IDTAIL)*  ;
+    :   IDSUR IDINNER* IDSUR  ;
 
 ID
     :   NAMING  ;
