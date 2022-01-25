@@ -6,7 +6,7 @@ plugins {
 }
 
 dependencies {
-    implementation("io.github.muqhc:skolloble-parser:1.0.1")
+    implementation("io.github.muqhc:skolloble-parser:1.0.2")
 }
 
 group = project.properties["group"]!! as String
