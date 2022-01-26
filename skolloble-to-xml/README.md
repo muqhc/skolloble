@@ -16,7 +16,7 @@ repositories {
 
 ```kotlin
 dependencies {
-    implementation("io.github.muqhc:skolloble-to-xml:1.0.2")
+    implementation("io.github.muqhc:skolloble-to-xml:1.1.0")
 }
 ```
 
@@ -44,9 +44,11 @@ val testResource = """
                 a: href"https://github.com/" target"_blank" -
                     "Click to go Github !"""".trimIndent()
 
-val generatedHtml = skollobleToXml(testResource)
+val generatedHtml = skollobleToXml(testResource)  // generate xml from skolloble
+val minimizedHtml = skollobleToXmlMinimize(testResource)  // generate minimized xml 
 
 println(generatedHtml)
+println(minimizedHtml)
 ```
 ##### // output
 ```
@@ -66,4 +68,5 @@ println(generatedHtml)
         </button>
     </body>
 </html>
+<html><head><meta  charset="utf-8"/><title>Hello Skolloble</title></head><body><button disabled="disabled"><a href="https://github.com/" target="_blank">Click to go Github !</a></button></body></html>
 ```

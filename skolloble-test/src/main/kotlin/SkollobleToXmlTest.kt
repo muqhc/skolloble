@@ -1,4 +1,5 @@
 import io.github.muqhc.skollobletoxml.skollobleToXml
+import io.github.muqhc.skollobletoxml.skollobleToXmlMinimize
 import java.io.File
 
 fun main() {
@@ -14,13 +15,13 @@ fun main() {
                     a: href"https://github.com/" target"_blank" -
                         "Click to go Github !"""".trimIndent()
 
-    val generatedHtml = skollobleToXml(testResource)
+    val generatedHtml = skollobleToXml(testResource).also(::println)
+    val minimizedHtml = skollobleToXmlMinimize(testResource).also(::println)
 
     File("generated-from-skolloble.html").run {
         writeText(
             generatedHtml
         )
-        println(readText())
         createNewFile()
     }
 

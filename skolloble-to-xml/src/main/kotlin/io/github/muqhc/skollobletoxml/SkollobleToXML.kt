@@ -14,6 +14,15 @@ internal fun skollobleToXml(element: Element, prefix: String): String =
             element.strings.let { if (it.isEmpty()) "" else it.joinToString("\n$prefix    ","\n$prefix    ") } +
             "\n$prefix</${element.name}>"
 
+fun skollobleToXmlMinimize(skolloble: String): String = skollobleToXmlMinimize(SkollobleParser(skolloble).rootElement)
+
+internal fun skollobleToXmlMinimize(element: Element): String =
+    if (element.children.isEmpty() && element.strings.isEmpty()) "<${element.name} ${attributeGen(element)}/>"
+    else "<${element.name}${attributeGen(element)}>" +
+            element.children.joinToString("") { skollobleToXmlMinimize(it) } +
+            element.strings.let { if (it.isEmpty()) "" else it.joinToString("\n") } +
+            "</${element.name}>"
+
 internal fun attributeGen(element: Element) =
     element.attribution.entries.let {
         if (it.isEmpty()) ""
