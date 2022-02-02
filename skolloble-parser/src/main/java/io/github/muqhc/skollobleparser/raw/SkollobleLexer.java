@@ -15,8 +15,8 @@ public class SkollobleLexer extends Lexer {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		NEWLINE=1, Space=2, INTOATTR=3, ID=4, WholeWrap=5, SingleBlock=6, NoBlock=7, 
-		GoOutBLOCK=8, INTOBLOCK=9, STRING=10, Comment=11;
+		NEWLINE=1, Space=2, INTOATTR=3, NamespaceSign=4, ID=5, WholeWrap=6, SingleBlock=7, 
+		NoBlock=8, GoOutBLOCK=9, INTOBLOCK=10, STRING=11, Comment=12;
 	public static String[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -27,22 +27,23 @@ public class SkollobleLexer extends Lexer {
 
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"NEWLINE", "Space", "INTOATTR", "IDSUR", "IDINNER", "NAMING", "ID", "WholeWrap", 
-			"SingleBlock", "NoBlock", "GoOutBLOCK", "INTOBLOCK", "STRING", "Comment"
+			"NEWLINE", "Space", "INTOATTR", "IDSUR", "IDINNER", "NAMING", "NamespaceSign", 
+			"ID", "WholeWrap", "SingleBlock", "NoBlock", "GoOutBLOCK", "INTOBLOCK", 
+			"STRING", "Comment"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, null, null, "':'", null, "'/'", "'-'", "'\\'", "'}'", "'{'"
+			null, null, null, "':'", "'@'", null, "'/'", "'-'", "'\\'", "'}'", "'{'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "NEWLINE", "Space", "INTOATTR", "ID", "WholeWrap", "SingleBlock", 
-			"NoBlock", "GoOutBLOCK", "INTOBLOCK", "STRING", "Comment"
+			null, "NEWLINE", "Space", "INTOATTR", "NamespaceSign", "ID", "WholeWrap", 
+			"SingleBlock", "NoBlock", "GoOutBLOCK", "INTOBLOCK", "STRING", "Comment"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -104,31 +105,32 @@ public class SkollobleLexer extends Lexer {
 	public ATN getATN() { return _ATN; }
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\2\r^\b\1\4\2\t\2\4"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\2\16b\b\1\4\2\t\2\4"+
 		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
-		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\3\2\3\2\3\2\5\2#\n\2\3\2\3\2\3"+
-		"\3\6\3(\n\3\r\3\16\3)\3\3\3\3\3\4\3\4\3\5\3\5\3\6\5\6\63\n\6\3\7\3\7\6"+
-		"\7\67\n\7\r\7\16\78\3\7\3\7\5\7=\n\7\3\b\3\b\3\t\3\t\3\n\3\n\3\13\3\13"+
-		"\3\f\3\f\3\r\3\r\3\16\3\16\7\16M\n\16\f\16\16\16P\13\16\3\16\3\16\3\17"+
-		"\3\17\7\17V\n\17\f\17\16\17Y\13\17\3\17\3\17\3\17\3\17\4NW\2\20\3\3\5"+
-		"\4\7\5\t\2\13\2\r\2\17\6\21\7\23\b\25\t\27\n\31\13\33\f\35\r\3\2\5\4\2"+
-		"\13\13\"\"\6\2\62;C\\aac|\7\2/\60\62;C\\aac|\2`\2\3\3\2\2\2\2\5\3\2\2"+
-		"\2\2\7\3\2\2\2\2\17\3\2\2\2\2\21\3\2\2\2\2\23\3\2\2\2\2\25\3\2\2\2\2\27"+
-		"\3\2\2\2\2\31\3\2\2\2\2\33\3\2\2\2\2\35\3\2\2\2\3\"\3\2\2\2\5\'\3\2\2"+
-		"\2\7-\3\2\2\2\t/\3\2\2\2\13\62\3\2\2\2\r\64\3\2\2\2\17>\3\2\2\2\21@\3"+
-		"\2\2\2\23B\3\2\2\2\25D\3\2\2\2\27F\3\2\2\2\31H\3\2\2\2\33J\3\2\2\2\35"+
-		"S\3\2\2\2\37#\7\f\2\2 !\7\17\2\2!#\7\f\2\2\"\37\3\2\2\2\" \3\2\2\2#$\3"+
-		"\2\2\2$%\b\2\2\2%\4\3\2\2\2&(\t\2\2\2\'&\3\2\2\2()\3\2\2\2)\'\3\2\2\2"+
-		")*\3\2\2\2*+\3\2\2\2+,\b\3\2\2,\6\3\2\2\2-.\7<\2\2.\b\3\2\2\2/\60\t\3"+
-		"\2\2\60\n\3\2\2\2\61\63\t\4\2\2\62\61\3\2\2\2\63\f\3\2\2\2\64<\5\t\5\2"+
-		"\65\67\5\13\6\2\66\65\3\2\2\2\678\3\2\2\28\66\3\2\2\289\3\2\2\29:\3\2"+
-		"\2\2:;\5\t\5\2;=\3\2\2\2<\66\3\2\2\2<=\3\2\2\2=\16\3\2\2\2>?\5\r\7\2?"+
-		"\20\3\2\2\2@A\7\61\2\2A\22\3\2\2\2BC\7/\2\2C\24\3\2\2\2DE\7^\2\2E\26\3"+
-		"\2\2\2FG\7\177\2\2G\30\3\2\2\2HI\7}\2\2I\32\3\2\2\2JN\7$\2\2KM\13\2\2"+
-		"\2LK\3\2\2\2MP\3\2\2\2NO\3\2\2\2NL\3\2\2\2OQ\3\2\2\2PN\3\2\2\2QR\7$\2"+
-		"\2R\34\3\2\2\2SW\7=\2\2TV\13\2\2\2UT\3\2\2\2VY\3\2\2\2WX\3\2\2\2WU\3\2"+
-		"\2\2XZ\3\2\2\2YW\3\2\2\2Z[\7=\2\2[\\\3\2\2\2\\]\b\17\2\2]\36\3\2\2\2\n"+
-		"\2\")\628<NW\3\b\2\2";
+		"\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\3\2\3\2\3\2\5\2%\n\2"+
+		"\3\2\3\2\3\3\6\3*\n\3\r\3\16\3+\3\3\3\3\3\4\3\4\3\5\3\5\3\6\5\6\65\n\6"+
+		"\3\7\3\7\6\79\n\7\r\7\16\7:\3\7\3\7\5\7?\n\7\3\b\3\b\3\t\3\t\3\n\3\n\3"+
+		"\13\3\13\3\f\3\f\3\r\3\r\3\16\3\16\3\17\3\17\7\17Q\n\17\f\17\16\17T\13"+
+		"\17\3\17\3\17\3\20\3\20\7\20Z\n\20\f\20\16\20]\13\20\3\20\3\20\3\20\3"+
+		"\20\4R[\2\21\3\3\5\4\7\5\t\2\13\2\r\2\17\6\21\7\23\b\25\t\27\n\31\13\33"+
+		"\f\35\r\37\16\3\2\5\4\2\13\13\"\"\6\2\62;C\\aac|\7\2/\60\62;C\\aac|\2"+
+		"d\2\3\3\2\2\2\2\5\3\2\2\2\2\7\3\2\2\2\2\17\3\2\2\2\2\21\3\2\2\2\2\23\3"+
+		"\2\2\2\2\25\3\2\2\2\2\27\3\2\2\2\2\31\3\2\2\2\2\33\3\2\2\2\2\35\3\2\2"+
+		"\2\2\37\3\2\2\2\3$\3\2\2\2\5)\3\2\2\2\7/\3\2\2\2\t\61\3\2\2\2\13\64\3"+
+		"\2\2\2\r\66\3\2\2\2\17@\3\2\2\2\21B\3\2\2\2\23D\3\2\2\2\25F\3\2\2\2\27"+
+		"H\3\2\2\2\31J\3\2\2\2\33L\3\2\2\2\35N\3\2\2\2\37W\3\2\2\2!%\7\f\2\2\""+
+		"#\7\17\2\2#%\7\f\2\2$!\3\2\2\2$\"\3\2\2\2%&\3\2\2\2&\'\b\2\2\2\'\4\3\2"+
+		"\2\2(*\t\2\2\2)(\3\2\2\2*+\3\2\2\2+)\3\2\2\2+,\3\2\2\2,-\3\2\2\2-.\b\3"+
+		"\2\2.\6\3\2\2\2/\60\7<\2\2\60\b\3\2\2\2\61\62\t\3\2\2\62\n\3\2\2\2\63"+
+		"\65\t\4\2\2\64\63\3\2\2\2\65\f\3\2\2\2\66>\5\t\5\2\679\5\13\6\28\67\3"+
+		"\2\2\29:\3\2\2\2:8\3\2\2\2:;\3\2\2\2;<\3\2\2\2<=\5\t\5\2=?\3\2\2\2>8\3"+
+		"\2\2\2>?\3\2\2\2?\16\3\2\2\2@A\7B\2\2A\20\3\2\2\2BC\5\r\7\2C\22\3\2\2"+
+		"\2DE\7\61\2\2E\24\3\2\2\2FG\7/\2\2G\26\3\2\2\2HI\7^\2\2I\30\3\2\2\2JK"+
+		"\7\177\2\2K\32\3\2\2\2LM\7}\2\2M\34\3\2\2\2NR\7$\2\2OQ\13\2\2\2PO\3\2"+
+		"\2\2QT\3\2\2\2RS\3\2\2\2RP\3\2\2\2SU\3\2\2\2TR\3\2\2\2UV\7$\2\2V\36\3"+
+		"\2\2\2W[\7=\2\2XZ\13\2\2\2YX\3\2\2\2Z]\3\2\2\2[\\\3\2\2\2[Y\3\2\2\2\\"+
+		"^\3\2\2\2][\3\2\2\2^_\7=\2\2_`\3\2\2\2`a\b\20\2\2a \3\2\2\2\n\2$+\64:"+
+		">R[\3\b\2\2";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

@@ -15,13 +15,13 @@ wrap texts with ';'
 ### element
 
 ```
-name : attribute"value" / ; wrap whole elements ;
+name : attribute "value" / ; wrap whole elements ;
 
-name : attribute"value" { ; elements ; }
+name : attribute "value" { ; elements ; }
 
-name : attribute"value" -  ; single element ;
+name : attribute "value" -  ; single element ;
 
-name : attribute"value" \  ; no element ;
+name : attribute "value" \  ; no element ;
 ```
 
 #### string-element
@@ -37,6 +37,14 @@ attribute without "value"
 
 ```
 name : shortattr1 shortattr2 ........
+```
+
+#### namespace
+```
+hello : xmlns@ns"https://......"
+```
+```
+world@ns : attr1@ns"value" attr2@ns"value ................
 ```
 
 ### ( Example )
@@ -62,16 +70,12 @@ in xml......
 ```
 <html>
     <head>
-        <meta  charset="utf-8"/>    
-        <title>
-            Hello Skolloble
-        </title>
+        <meta charset="utf-8"/>    
+        <title>Hello Skolloble</title>
     </head>
     <body>
         <button disabled="disabled">
-            <a href="https://github.com/" target="_blank">
-                Click to go Github !
-            </a>
+            <a href="https://github.com/" target="_blank">Click to go Github !</a>
         </button>
     </body>
 </html>

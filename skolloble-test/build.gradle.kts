@@ -1,5 +1,5 @@
 dependencies {
     implementation("org.antlr:antlr4-runtime:4.9.3")
-    implementation("io.github.muqhc:skolloble-parser:1.0.2")
-    implementation("io.github.muqhc:skolloble-to-xml:1.1.0")
+    implementation(project(":${rootProject.name}-parser"))
+    implementation(project(":${rootProject.name}-to-xml"))
 }

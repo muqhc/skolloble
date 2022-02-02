@@ -15,14 +15,14 @@ fun main() {
 
     val skollobleParser = SkollobleParser(testResource)
 
-    println(
-        skollobleParser
-            .rootElement
-            .children[1]
-            .children[0]
-            .children[0]
-            .attribution
-            .entries
-    )
+    skollobleParser
+        .rootElement
+        .children[1]
+        .children[0]
+        .children[0]
+        .attribution
+        .entries.forEach { (key,value) ->
+            println("$key=${value.value}")
+        }
 
 }

@@ -56,4 +56,14 @@ public interface SkollobleListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAttribute(SkollobleParser.AttributeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SkollobleParser#namespace}.
+	 * @param ctx the parse tree
+	 */
+	void enterNamespace(SkollobleParser.NamespaceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SkollobleParser#namespace}.
+	 * @param ctx the parse tree
+	 */
+	void exitNamespace(SkollobleParser.NamespaceContext ctx);
 }

@@ -19,28 +19,28 @@ public class SkollobleParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		NEWLINE=1, Space=2, INTOATTR=3, ID=4, WholeWrap=5, SingleBlock=6, NoBlock=7, 
-		GoOutBLOCK=8, INTOBLOCK=9, STRING=10, Comment=11;
+		NEWLINE=1, Space=2, INTOATTR=3, NamespaceSign=4, ID=5, WholeWrap=6, SingleBlock=7, 
+		NoBlock=8, GoOutBLOCK=9, INTOBLOCK=10, STRING=11, Comment=12;
 	public static final int
 		RULE_file = 0, RULE_element = 1, RULE_attribution = 2, RULE_block = 3, 
-		RULE_attribute = 4;
+		RULE_attribute = 4, RULE_namespace = 5;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"file", "element", "attribution", "block", "attribute"
+			"file", "element", "attribution", "block", "attribute", "namespace"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, null, null, "':'", null, "'/'", "'-'", "'\\'", "'}'", "'{'"
+			null, null, null, "':'", "'@'", null, "'/'", "'-'", "'\\'", "'}'", "'{'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "NEWLINE", "Space", "INTOATTR", "ID", "WholeWrap", "SingleBlock", 
-			"NoBlock", "GoOutBLOCK", "INTOBLOCK", "STRING", "Comment"
+			null, "NEWLINE", "Space", "INTOATTR", "NamespaceSign", "ID", "WholeWrap", 
+			"SingleBlock", "NoBlock", "GoOutBLOCK", "INTOBLOCK", "STRING", "Comment"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -118,7 +118,7 @@ public class SkollobleParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(10);
+			setState(12);
 			element();
 			}
 		}
@@ -135,11 +135,14 @@ public class SkollobleParser extends Parser {
 
 	public static class ElementContext extends ParserRuleContext {
 		public TerminalNode ID() { return getToken(SkollobleParser.ID, 0); }
-		public AttributionContext attribution() {
-			return getRuleContext(AttributionContext.class,0);
-		}
 		public BlockContext block() {
 			return getRuleContext(BlockContext.class,0);
+		}
+		public NamespaceContext namespace() {
+			return getRuleContext(NamespaceContext.class,0);
+		}
+		public AttributionContext attribution() {
+			return getRuleContext(AttributionContext.class,0);
 		}
 		public TerminalNode STRING() { return getToken(SkollobleParser.STRING, 0); }
 		public ElementContext(ParserRuleContext parent, int invokingState) {
@@ -161,40 +164,42 @@ public class SkollobleParser extends Parser {
 		enterRule(_localctx, 2, RULE_element);
 		int _la;
 		try {
-			setState(20);
+			setState(23);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case ID:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(12);
-				match(ID);
 				setState(14);
+				match(ID);
+				setState(16);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+				if (_la==NamespaceSign) {
+					{
+					setState(15);
+					namespace();
+					}
+				}
+
+				setState(19);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==INTOATTR) {
 					{
-					setState(13);
+					setState(18);
 					attribution();
 					}
 				}
 
-				setState(17);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << WholeWrap) | (1L << SingleBlock) | (1L << NoBlock) | (1L << INTOBLOCK))) != 0)) {
-					{
-					setState(16);
-					block();
-					}
-				}
-
+				setState(21);
+				block();
 				}
 				break;
 			case STRING:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(19);
+				setState(22);
 				match(STRING);
 				}
 				break;
@@ -238,32 +243,26 @@ public class SkollobleParser extends Parser {
 	public final AttributionContext attribution() throws RecognitionException {
 		AttributionContext _localctx = new AttributionContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_attribution);
+		int _la;
 		try {
-			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(22);
+			setState(25);
 			match(INTOATTR);
-			setState(24); 
+			setState(27); 
 			_errHandler.sync(this);
-			_alt = 1;
+			_la = _input.LA(1);
 			do {
-				switch (_alt) {
-				case 1:
-					{
-					{
-					setState(23);
-					attribute();
-					}
-					}
-					break;
-				default:
-					throw new NoViableAltException(this);
+				{
+				{
+				setState(26);
+				attribute();
 				}
-				setState(26); 
+				}
+				setState(29); 
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,3,_ctx);
-			} while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER );
+				_la = _input.LA(1);
+			} while ( _la==ID );
 			}
 		}
 		catch (RecognitionException re) {
@@ -309,38 +308,38 @@ public class SkollobleParser extends Parser {
 		int _la;
 		try {
 			int _alt;
-			setState(45);
+			setState(48);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case INTOBLOCK:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(28);
+				setState(31);
 				match(INTOBLOCK);
-				setState(30); 
+				setState(35);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				do {
+				while (_la==ID || _la==STRING) {
 					{
 					{
-					setState(29);
+					setState(32);
 					element();
 					}
 					}
-					setState(32); 
+					setState(37);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
-				} while ( _la==ID || _la==STRING );
-				setState(34);
+				}
+				setState(38);
 				match(GoOutBLOCK);
 				}
 				break;
 			case WholeWrap:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(36);
+				setState(39);
 				match(WholeWrap);
-				setState(38); 
+				setState(41); 
 				_errHandler.sync(this);
 				_alt = 1;
 				do {
@@ -348,7 +347,7 @@ public class SkollobleParser extends Parser {
 					case 1:
 						{
 						{
-						setState(37);
+						setState(40);
 						element();
 						}
 						}
@@ -356,7 +355,7 @@ public class SkollobleParser extends Parser {
 					default:
 						throw new NoViableAltException(this);
 					}
-					setState(40); 
+					setState(43); 
 					_errHandler.sync(this);
 					_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
 				} while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER );
@@ -365,16 +364,16 @@ public class SkollobleParser extends Parser {
 			case SingleBlock:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(42);
+				setState(45);
 				match(SingleBlock);
-				setState(43);
+				setState(46);
 				element();
 				}
 				break;
 			case NoBlock:
 				enterOuterAlt(_localctx, 4);
 				{
-				setState(44);
+				setState(47);
 				match(NoBlock);
 				}
 				break;
@@ -395,6 +394,9 @@ public class SkollobleParser extends Parser {
 
 	public static class AttributeContext extends ParserRuleContext {
 		public TerminalNode ID() { return getToken(SkollobleParser.ID, 0); }
+		public NamespaceContext namespace() {
+			return getRuleContext(NamespaceContext.class,0);
+		}
 		public TerminalNode STRING() { return getToken(SkollobleParser.STRING, 0); }
 		public AttributeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -413,21 +415,72 @@ public class SkollobleParser extends Parser {
 	public final AttributeContext attribute() throws RecognitionException {
 		AttributeContext _localctx = new AttributeContext(_ctx, getState());
 		enterRule(_localctx, 8, RULE_attribute);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(47);
+			setState(50);
 			match(ID);
-			setState(49);
+			setState(52);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
-			case 1:
+			_la = _input.LA(1);
+			if (_la==NamespaceSign) {
 				{
-				setState(48);
+				setState(51);
+				namespace();
+				}
+			}
+
+			setState(55);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			if (_la==STRING) {
+				{
+				setState(54);
 				match(STRING);
 				}
-				break;
 			}
+
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class NamespaceContext extends ParserRuleContext {
+		public TerminalNode NamespaceSign() { return getToken(SkollobleParser.NamespaceSign, 0); }
+		public TerminalNode ID() { return getToken(SkollobleParser.ID, 0); }
+		public NamespaceContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_namespace; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).enterNamespace(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).exitNamespace(this);
+		}
+	}
+
+	public final NamespaceContext namespace() throws RecognitionException {
+		NamespaceContext _localctx = new NamespaceContext(_ctx, getState());
+		enterRule(_localctx, 10, RULE_namespace);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(57);
+			match(NamespaceSign);
+			setState(58);
+			match(ID);
 			}
 		}
 		catch (RecognitionException re) {
@@ -442,21 +495,23 @@ public class SkollobleParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\r\66\4\2\t\2\4\3"+
-		"\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\3\3\3\5\3\21\n\3\3\3\5\3\24\n\3"+
-		"\3\3\5\3\27\n\3\3\4\3\4\6\4\33\n\4\r\4\16\4\34\3\5\3\5\6\5!\n\5\r\5\16"+
-		"\5\"\3\5\3\5\3\5\3\5\6\5)\n\5\r\5\16\5*\3\5\3\5\3\5\5\5\60\n\5\3\6\3\6"+
-		"\5\6\64\n\6\3\6\2\2\7\2\4\6\b\n\2\2\2:\2\f\3\2\2\2\4\26\3\2\2\2\6\30\3"+
-		"\2\2\2\b/\3\2\2\2\n\61\3\2\2\2\f\r\5\4\3\2\r\3\3\2\2\2\16\20\7\6\2\2\17"+
-		"\21\5\6\4\2\20\17\3\2\2\2\20\21\3\2\2\2\21\23\3\2\2\2\22\24\5\b\5\2\23"+
-		"\22\3\2\2\2\23\24\3\2\2\2\24\27\3\2\2\2\25\27\7\f\2\2\26\16\3\2\2\2\26"+
-		"\25\3\2\2\2\27\5\3\2\2\2\30\32\7\5\2\2\31\33\5\n\6\2\32\31\3\2\2\2\33"+
-		"\34\3\2\2\2\34\32\3\2\2\2\34\35\3\2\2\2\35\7\3\2\2\2\36 \7\13\2\2\37!"+
-		"\5\4\3\2 \37\3\2\2\2!\"\3\2\2\2\" \3\2\2\2\"#\3\2\2\2#$\3\2\2\2$%\7\n"+
-		"\2\2%\60\3\2\2\2&(\7\7\2\2\')\5\4\3\2(\'\3\2\2\2)*\3\2\2\2*(\3\2\2\2*"+
-		"+\3\2\2\2+\60\3\2\2\2,-\7\b\2\2-\60\5\4\3\2.\60\7\t\2\2/\36\3\2\2\2/&"+
-		"\3\2\2\2/,\3\2\2\2/.\3\2\2\2\60\t\3\2\2\2\61\63\7\6\2\2\62\64\7\f\2\2"+
-		"\63\62\3\2\2\2\63\64\3\2\2\2\64\13\3\2\2\2\n\20\23\26\34\"*/\63";
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16?\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\3\2\3\2\3\3\3\3\5\3\23\n\3\3\3\5\3"+
+		"\26\n\3\3\3\3\3\5\3\32\n\3\3\4\3\4\6\4\36\n\4\r\4\16\4\37\3\5\3\5\7\5"+
+		"$\n\5\f\5\16\5\'\13\5\3\5\3\5\3\5\6\5,\n\5\r\5\16\5-\3\5\3\5\3\5\5\5\63"+
+		"\n\5\3\6\3\6\5\6\67\n\6\3\6\5\6:\n\6\3\7\3\7\3\7\3\7\2\2\b\2\4\6\b\n\f"+
+		"\2\2\2C\2\16\3\2\2\2\4\31\3\2\2\2\6\33\3\2\2\2\b\62\3\2\2\2\n\64\3\2\2"+
+		"\2\f;\3\2\2\2\16\17\5\4\3\2\17\3\3\2\2\2\20\22\7\7\2\2\21\23\5\f\7\2\22"+
+		"\21\3\2\2\2\22\23\3\2\2\2\23\25\3\2\2\2\24\26\5\6\4\2\25\24\3\2\2\2\25"+
+		"\26\3\2\2\2\26\27\3\2\2\2\27\32\5\b\5\2\30\32\7\r\2\2\31\20\3\2\2\2\31"+
+		"\30\3\2\2\2\32\5\3\2\2\2\33\35\7\5\2\2\34\36\5\n\6\2\35\34\3\2\2\2\36"+
+		"\37\3\2\2\2\37\35\3\2\2\2\37 \3\2\2\2 \7\3\2\2\2!%\7\f\2\2\"$\5\4\3\2"+
+		"#\"\3\2\2\2$\'\3\2\2\2%#\3\2\2\2%&\3\2\2\2&(\3\2\2\2\'%\3\2\2\2(\63\7"+
+		"\13\2\2)+\7\b\2\2*,\5\4\3\2+*\3\2\2\2,-\3\2\2\2-+\3\2\2\2-.\3\2\2\2.\63"+
+		"\3\2\2\2/\60\7\t\2\2\60\63\5\4\3\2\61\63\7\n\2\2\62!\3\2\2\2\62)\3\2\2"+
+		"\2\62/\3\2\2\2\62\61\3\2\2\2\63\t\3\2\2\2\64\66\7\7\2\2\65\67\5\f\7\2"+
+		"\66\65\3\2\2\2\66\67\3\2\2\2\679\3\2\2\28:\7\r\2\298\3\2\2\29:\3\2\2\2"+
+		":\13\3\2\2\2;<\7\6\2\2<=\7\7\2\2=\r\3\2\2\2\13\22\25\31\37%-\62\669";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

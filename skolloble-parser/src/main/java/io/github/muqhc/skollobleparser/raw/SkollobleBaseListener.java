@@ -70,6 +70,18 @@ public class SkollobleBaseListener implements SkollobleListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAttribute(SkollobleParser.AttributeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNamespace(SkollobleParser.NamespaceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNamespace(SkollobleParser.NamespaceContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

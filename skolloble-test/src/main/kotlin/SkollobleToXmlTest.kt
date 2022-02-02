@@ -10,19 +10,12 @@ fun main() {
                 meta : charset"utf-8" \
                 title - "Hello Skolloble"
             }
-            body /
-                button: disabled -
-                    a: href"https://github.com/" target"_blank" -
+            body: xmlns@a "uri" /
+                button@a: disabled -
+                    a@a: href"https://github.com/" target"_blank" -
                         "Click to go Github !"""".trimIndent()
 
     val generatedHtml = skollobleToXml(testResource).also(::println)
     val minimizedHtml = skollobleToXmlMinimize(testResource).also(::println)
-
-    File("generated-from-skolloble.html").run {
-        writeText(
-            generatedHtml
-        )
-        createNewFile()
-    }
 
 }

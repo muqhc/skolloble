@@ -16,7 +16,7 @@ repositories {
 
 ```kotlin
 dependencies {
-    implementation("io.github.muqhc:skolloble-parser:1.0.2")
+    implementation("io.github.muqhc:skolloble-parser:1.2.1")
 }
 ```
 
@@ -46,17 +46,18 @@ val testResource = """
 
 val skollobleParser = SkollobleParser(testResource)
 
-println(
-    skollobleParser
-        .rootElement
-        .children[1]
-        .children[0]
-        .children[0]
-        .attribution
-        .entries
-)
+skollobleParser
+    .rootElement
+    .children[1]
+    .children[0]
+    .children[0]
+    .attribution
+    .entries.forEach { (key,value) ->
+        println("$key=${value.value}")
+    }
 ```
 ##### // output
 ```
-[href=https://github.com/, target=_blank]
+href="https://github.com/"
+target="_blank"
 ```

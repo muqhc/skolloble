@@ -5,7 +5,7 @@ file
     ;
 
 element
-    :   ID attribution? block?
+    :   ID namespace? attribution? block
     |   STRING
     ;
 
@@ -14,14 +14,18 @@ attribution
     ;
 
 block
-    :   INTOBLOCK element+ GoOutBLOCK
+    :   INTOBLOCK element* GoOutBLOCK
     |   WholeWrap element+
     |   SingleBlock element
     |   NoBlock
     ;
 
 attribute
-    :   ID STRING?
+    :   ID namespace? STRING?
+    ;
+
+namespace
+    :   NamespaceSign ID
     ;
 
 
@@ -46,6 +50,9 @@ fragment IDINNER
 
 fragment NAMING
     :   IDSUR (IDINNER+ IDSUR)?  ;
+
+NamespaceSign
+    :   '@'  ;
 
 ID
     :   NAMING  ;
@@ -72,3 +79,5 @@ STRING
 // -- Commant --
 Comment
     :   ';'.*?';'       -> skip  ;
+
+
