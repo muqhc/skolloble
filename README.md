@@ -41,7 +41,7 @@ name : shortattr1 shortattr2 ........
 
 #### namespace
 ```
-hello : xmlns@ns"https://......"
+hello : ns@xmlns"https://......"
 ```
 ```
 world@ns : attr1@ns"value" attr2@ns"value ................

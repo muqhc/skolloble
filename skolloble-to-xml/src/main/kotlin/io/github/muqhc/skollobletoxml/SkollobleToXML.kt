@@ -28,5 +28,5 @@ internal fun tagGen(element: Element) = "${if (element.namespace == null) "" els
 internal fun attributeGen(element: Element) =
     element.attribution.entries.let {
         if (it.isEmpty()) ""
-        else it.joinToString(" "," ") { (key, value) -> "${value.id}${if (value.namespace == null) "" else ":"+value.namespace}=${value.value}" }
+        else it.joinToString(" "," ") { (key, value) -> "${if (value.namespace == null) "" else value.namespace+":"}${value.id}=${value.value}" }
     }

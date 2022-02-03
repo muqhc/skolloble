@@ -16,7 +16,7 @@ repositories {
 
 ```kotlin
 dependencies {
-    implementation("io.github.muqhc:skolloble-to-xml:1.2.1")
+    implementation("io.github.muqhc:skolloble-to-xml:1.2.2")
 }
 ```
 
