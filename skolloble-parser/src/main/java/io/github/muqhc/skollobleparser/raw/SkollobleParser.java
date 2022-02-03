@@ -104,11 +104,11 @@ public class SkollobleParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_file; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).enterFile(this);
+			if ( listener instanceof SkollobleListener ) ((SkollobleListener)listener).enterFile(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).exitFile(this);
+			if ( listener instanceof SkollobleListener ) ((SkollobleListener)listener).exitFile(this);
 		}
 	}
 
@@ -151,11 +151,11 @@ public class SkollobleParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_element; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).enterElement(this);
+			if ( listener instanceof SkollobleListener ) ((SkollobleListener)listener).enterElement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).exitElement(this);
+			if ( listener instanceof SkollobleListener ) ((SkollobleListener)listener).exitElement(this);
 		}
 	}
 
@@ -232,11 +232,11 @@ public class SkollobleParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_attribution; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).enterAttribution(this);
+			if ( listener instanceof SkollobleListener ) ((SkollobleListener)listener).enterAttribution(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).exitAttribution(this);
+			if ( listener instanceof SkollobleListener ) ((SkollobleListener)listener).exitAttribution(this);
 		}
 	}
 
@@ -294,11 +294,11 @@ public class SkollobleParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_block; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).enterBlock(this);
+			if ( listener instanceof SkollobleListener ) ((SkollobleListener)listener).enterBlock(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).exitBlock(this);
+			if ( listener instanceof SkollobleListener ) ((SkollobleListener)listener).exitBlock(this);
 		}
 	}
 
@@ -404,11 +404,11 @@ public class SkollobleParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_attribute; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).enterAttribute(this);
+			if ( listener instanceof SkollobleListener ) ((SkollobleListener)listener).enterAttribute(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).exitAttribute(this);
+			if ( listener instanceof SkollobleListener ) ((SkollobleListener)listener).exitAttribute(this);
 		}
 	}
 
@@ -463,11 +463,11 @@ public class SkollobleParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_namespace; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).enterNamespace(this);
+			if ( listener instanceof SkollobleListener ) ((SkollobleListener)listener).enterNamespace(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof SkollobleListener) ((SkollobleListener)listener).exitNamespace(this);
+			if ( listener instanceof SkollobleListener ) ((SkollobleListener)listener).exitNamespace(this);
 		}
 	}
 

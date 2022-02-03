@@ -49,7 +49,7 @@ fragment IDINNER
     :   [0-9a-zA-Z_.]|'-'  ;
 
 fragment NAMING
-    :   IDSUR (IDINNER+ IDSUR)?  ;
+    :   IDSUR+ (IDINNER+ IDSUR)?  ;
 
 NamespaceSign
     :   '@'  ;
