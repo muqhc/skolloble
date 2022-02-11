@@ -93,3 +93,7 @@ in xml......
 
 ##### [skolloble-to-xml](skolloble-to-xml)
 
+### here to try skolloble
+
+##### [![Discord Skolloble Testing Bot](https://cdn.discordapp.com/avatars/940828335754334209/efc1bfd6dd576e0728fa80c1a1bf38d3.webp?size=128) (Discord Server for Trying Skolloble)](https://discord.gg/yj9YKDyw)
+
