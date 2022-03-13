@@ -16,7 +16,7 @@ repositories {
 
 ```kotlin
 dependencies {
-    implementation("io.github.muqhc:skolloble-parser:1.2.3")
+    implementation("io.github.muqhc:skolloble-parser:1.3.0")
 }
 ```
 
