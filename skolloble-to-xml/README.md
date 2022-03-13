@@ -1,4 +1,5 @@
 # skolloble-to-xml
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.muqhc/skolloble-to-xml.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.muqhc%22%20AND%20a:%22skolloble-to-xml%22)
 
 #### _the skolloble to xml converter_
 
@@ -59,8 +60,8 @@ println(minimizedHtml)
         <title>Hello Skolloble</title>
     </head>
     <body>
-        <a:button disabled="disabled">
-            <a:a href=""https://github.com/"" target=""_blank"">Click to go Github !</a>
+        <button disabled="disabled">
+            <a href=""https://github.com/"" target=""_blank"">Click to go Github !</a>
         </button>
     </body>
 </html>
