@@ -74,7 +74,8 @@ INTOBLOCK
 
 
 STRING
-    :   '"'.*?'"'  ;
+    :   '"'.*?'"'
+    |   '`'.*?'`'   ;
 
 // -- Commant --
 Comment

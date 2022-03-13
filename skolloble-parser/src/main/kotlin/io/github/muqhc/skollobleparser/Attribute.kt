@@ -5,5 +5,5 @@ import io.github.muqhc.skollobleparser.raw.SkollobleParser
 class Attribute(val attributeContext: SkollobleParser.AttributeContext) {
     val id = attributeContext.ID().text
     val namespace = attributeContext.namespace()?.ID()?.text
-    val value = attributeContext.STRING()?.text ?: id
+    val value = attributeContext.STRING()?.text?.drop(1)?.dropLast(1) ?: id
 }
