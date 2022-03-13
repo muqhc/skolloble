@@ -1,4 +1,5 @@
 # skolloble-to-xml
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.muqhc/skolloble-parser.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22io.github.muqhc%22%20AND%20a:%22skolloble-parser%22)
 
 #### _the skolloble parser_
 
