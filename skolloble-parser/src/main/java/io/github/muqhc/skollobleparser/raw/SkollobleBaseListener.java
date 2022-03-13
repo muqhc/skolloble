@@ -75,13 +75,37 @@ public class SkollobleBaseListener implements SkollobleListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNamespace(SkollobleParser.NamespaceContext ctx) { }
+	@Override public void enterName(SkollobleParser.NameContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNamespace(SkollobleParser.NamespaceContext ctx) { }
+	@Override public void exitName(SkollobleParser.NameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBacknamespace(SkollobleParser.BacknamespaceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBacknamespace(SkollobleParser.BacknamespaceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterForenamespace(SkollobleParser.ForenamespaceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitForenamespace(SkollobleParser.ForenamespaceContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

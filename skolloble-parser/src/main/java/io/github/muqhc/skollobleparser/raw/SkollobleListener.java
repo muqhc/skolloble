@@ -57,13 +57,33 @@ public interface SkollobleListener extends ParseTreeListener {
 	 */
 	void exitAttribute(SkollobleParser.AttributeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link SkollobleParser#namespace}.
+	 * Enter a parse tree produced by {@link SkollobleParser#name}.
 	 * @param ctx the parse tree
 	 */
-	void enterNamespace(SkollobleParser.NamespaceContext ctx);
+	void enterName(SkollobleParser.NameContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link SkollobleParser#namespace}.
+	 * Exit a parse tree produced by {@link SkollobleParser#name}.
 	 * @param ctx the parse tree
 	 */
-	void exitNamespace(SkollobleParser.NamespaceContext ctx);
+	void exitName(SkollobleParser.NameContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SkollobleParser#backnamespace}.
+	 * @param ctx the parse tree
+	 */
+	void enterBacknamespace(SkollobleParser.BacknamespaceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SkollobleParser#backnamespace}.
+	 * @param ctx the parse tree
+	 */
+	void exitBacknamespace(SkollobleParser.BacknamespaceContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link SkollobleParser#forenamespace}.
+	 * @param ctx the parse tree
+	 */
+	void enterForenamespace(SkollobleParser.ForenamespaceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link SkollobleParser#forenamespace}.
+	 * @param ctx the parse tree
+	 */
+	void exitForenamespace(SkollobleParser.ForenamespaceContext ctx);
 }
