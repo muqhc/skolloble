@@ -15,19 +15,20 @@ wrap texts with ';'
 ### element
 
 ```
-name : attribute"value" / ; wrap whole elements ;
+name : attribute"value" / ; under all child elements ;
 
-name : attribute"value" { ; elements ; }
+name : attribute"value" { ; child elements ; }
 
-name : attribute"value" -  ; single element ;
+name : attribute"value" -  ; single child element ;
 
-name : attribute"value" \  ; no element ;
+name : attribute"value" \  ; no child element ;
 ```
 
-#### string-element
+#### text
 ```
 name : attr"value" {
-    "it just a string element!"
+    "I'm a Text!"
+    `I'm a Tex too!`
 }
 ```
 
@@ -39,23 +40,18 @@ attribute without "value"
 name : shortattr1 shortattr2 ........
 ```
 
-#### namespace
+#### prefix
 ```
-hello : ns@xmlns"https://......"
-; or ;
-hello : xmlns<>ns"https://......"
+abc<>world : abc<>attr1"value" abc<>attr2"value" ....
 ```
 ```
-world@ns : attr1@ns"value" attr2@ns"value ................
-; or ;
-ns<>world : ns<>attr1"value" ns<>attr2"value ................
+world@abc : attr1@abc"value" attr2@abc"value" ....
 ```
 
 ### Tips
 
-+ You can write `"String"` or attribute's `"value"` like this...
-  + ``` `String` ```
-  + ``` `value` ```
++ You can write `"Text"` or attribute's `"value"` like this...
+  + ``` `Text` ```, ``` `value` ```
   + ``` ` it can include "double quates" ` ```
 
 ### ( Example )
