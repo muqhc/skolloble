@@ -5,7 +5,7 @@ file
     ;
 
 element
-    :   ID namespace? attribution? block
+    :   name attribution? block
     |   STRING
     ;
 
@@ -21,11 +21,21 @@ block
     ;
 
 attribute
-    :   ID namespace? STRING?
+    :   name STRING?
     ;
 
-namespace
-    :   NamespaceSign ID
+name
+    :   ID
+    |   ID backnamespace
+    |   forenamespace ID
+    ;
+
+backnamespace
+    :   BackNamespaceSign ID
+    ;
+
+forenamespace
+    :   ID ForeNamespaceSign
     ;
 
 
@@ -51,14 +61,17 @@ fragment IDINNER
 fragment NAMING
     :   IDSUR+ (IDINNER+ IDSUR)?  ;
 
-NamespaceSign
+BackNamespaceSign
     :   '@'  ;
+
+ForeNamespaceSign
+    :   '<>'  ;
 
 ID
     :   NAMING  ;
 
 WholeWrap
-    :   '/'  ;
+    :   '/'    ;
 
 SingleBlock
     :   '-'  ;
