@@ -28,7 +28,7 @@ name : attribute"value" \  ; no child element ;
 ```
 name : attr"value" {
     "I'm a Text!"
-    `I'm a Tex too!`
+    `I'm a Text too!`
 }
 ```
 
