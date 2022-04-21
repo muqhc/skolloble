@@ -59,6 +59,6 @@ skollobleParser
 ```
 ##### // output
 ```
-href="https://github.com/"
-target="_blank"
+href=https://github.com/
+target=_blank
 ```
