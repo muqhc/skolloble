@@ -10,9 +10,9 @@ fun main() {
                 meta : charset"utf-8" ;
                 title - "Hello Skolloble"
             }
-            body: a@xmlns "uri" /
-                button@a: disabled -
-                    a@a: href@a"https://github.com/" target@a"_blank" -
+            body: xmlns<>a "uri" /
+                a<>button: disabled -
+                    a<>a: a<>href"https://github.com/" target<>a"_blank" -
                         "Click to go Github !"""".trimIndent()
 
     val generatedHtml = skollobleToXml(testResource).also(::println)
