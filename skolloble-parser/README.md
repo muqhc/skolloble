@@ -17,7 +17,7 @@ repositories {
 
 ```kotlin
 dependencies {
-    implementation("io.github.muqhc:skolloble-parser:1.4.1")
+    implementation("io.github.muqhc:skolloble-parser:1.5.0")
 }
 ```
 
@@ -37,7 +37,7 @@ import io.github.muqhc.skollobleparser.SkollobleParser
 val testResource = """
         html /
             head {
-                meta : charset"utf-8" \
+                meta : charset"utf-8" ;
                 title - "Hello Skolloble"
             }
             body /

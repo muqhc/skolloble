@@ -5,7 +5,7 @@ fun main() {
     val testResource = """
         html /
             head {
-                meta : charset"utf-8" \
+                meta : charset"utf-8" ;
                 title - "Hello Skolloble"
             }
             body /

@@ -77,7 +77,7 @@ SingleBlock
     :   '-'  ;
 
 NoBlock
-    :   '\\'  ;
+    :   ';'  ;
 
 GoOutBLOCK
     :   '}'  ;
@@ -92,6 +92,6 @@ STRING
 
 // -- Commant --
 Comment
-    :   ';'.*?';'       -> skip  ;
+    :   '*'.*?'*'       -> skip  ;
 
 

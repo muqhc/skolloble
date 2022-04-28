@@ -1,14 +1,14 @@
 
-; wrap text with ';;' to comment ;
-; '.skolloble', the filename extension ;
+* wrap text with '*' to comment *
+* '.skolloble', the filename extension *
 
 html /
-    ; the '/' means wrapping from beginning to end. ;
+    * the '/' means wrapping from beginning to end. *
 
     head -
         title - "Hello Skolloble"
 
-    ; the '-' means "you have to add only one element" ;
+    * the '-' means "you have to add only one element" *
 
     body /
         button: disabled -

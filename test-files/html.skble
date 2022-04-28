@@ -1,19 +1,19 @@
 
-; wrap text with ';;' to comment ;
-; the '.skble' is short of '.skolloble' ;
+* wrap text with '**' to comment *
+* the '.skble' is short of '.skolloble' *
 
 html /
-    ; the '/' means wrapping from beginning to end. ;
+    * the '/' means wrapping from beginning to end. *
 
     head {
-        meta : charset"utf-8" \
+        meta : charset"utf-8" ;
         title - "Hello Skolloble"
     }
 
     body /
 
         button: disabled -
-            ; the '-' means "you have to add only one element" ;
+            * the '-' means "you have to add only one element" *
 
             a: href "https://github.com/" target "_blank" -
                 "Click to go Github !"
