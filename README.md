@@ -7,21 +7,21 @@
 #### [grammar definition with antlr4](skolloble-grammar/grammar/src/main/antlr/Skolloble.g4)
 
 ### Comment
-wrap texts with ';'
+wrap texts with '*'
 ```
-; It is a Comment! ;
+* It is a Comment! *
 ```
 
 ### element
 
 ```
-name : attribute"value" / ; under all child elements ;
+name : attribute"value" / * under all child elements *
 
-name : attribute"value" { ; child elements ; }
+name : attribute"value" { * child elements * }
 
-name : attribute"value" -  ; single child element ;
+name : attribute"value" -  * single child element *
 
-name : attribute"value" \  ; no child element ;
+name : attribute"value" \  * no child element *
 ```
 
 #### text
@@ -63,7 +63,7 @@ in skolloble......
 ```
 html /
     head {
-        meta : charset"utf-8" \
+        meta : charset"utf-8" ;
         title - "Hello Skolloble"
     }
     body /
