@@ -21,7 +21,7 @@ name : attribute"value" { * child elements * }
 
 name : attribute"value" -  * single child element *
 
-name : attribute"value" \  * no child element *
+name : attribute"value" ;  * no child element *
 ```
 
 #### text
